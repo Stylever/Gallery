@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* icon */
+@font-face {font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot'); /* IE9*/
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.gallery {
+	margin: 20px auto;
+	width: 90%;
+}
+.gallery .photo {
+	margin-bottom: 10px;
+	background: #e6e6e6;
+	border-radius: 3px;
+	padding: 5px;
+	cursor: pointer;
+}
+.gallery .photo img {
+	width: 100%;
+}
+
+.popup {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	overflow: hidden;
+	transition: 1s;
+}
+.carousel-3d {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: -200px 0 0 -300px;
+	width: 600px;
+	height: 400px;
+	-webkit-perspective: 2000px;
+	   -moz-perspective: 2000px;
+	   	    perspective: 2000px;
+}
+.carousel-3d .spin {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-sytle: preserve-3d;
+			transform-style: preserve-3d;
+	transition: 1s;
+}
+.carousel-3d .spin img {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.popup .close,
+.popup-large .close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 40px;
+	color: #ffffff;
+	cursor: pointer;
+}
+.popup .prev,
+.popup .next {
+	position: absolute;
+	top: 50%;
+	font-size: 40px;
+	color: #ffffff;
+	cursor: pointer;
+}
+.popup .prev {
+	left: 20px;
+	transform: rotateY(180deg);
+}
+.popup .next {
+	right: 20px;
+}
+
+.popup-large {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #000000;
+	overflow: hidden;
+	transition: 1s;
+}
+.popup-large .img-large {
+	margin: 40px auto;
+	width: 95%;
+	overflow: hidden;
+}
+.popup-large .img-large img {
+	width: 100%;
+}
+
+
