@@ -38,7 +38,10 @@
 	height: 100%;
 	background: #000000;
 	overflow: hidden;
-	transition: 1s;
+	-webkit-transition: -webkit-transform 1s;
+	   -moz-transition: -moz-transform 1s;
+	     -o-transition: -o-transform 1s;
+		  	transition: 1s;
 }
 .carousel-3d {
 	position: relative;
@@ -51,6 +54,13 @@
 	   -moz-perspective: 2000px;
 	   	    perspective: 2000px;
 }
+@media screen and (max-width: 768px) {
+	.carousel-3d {
+		margin: -100px 0 0 -150px;
+		width: 300px;
+		height: 200px;
+	}
+}
 .carousel-3d .spin {
 	position: absolute;
 	width: 100%;
@@ -58,7 +68,10 @@
 	-webkit-transform-style: preserve-3d;
 	   -moz-transform-sytle: preserve-3d;
 			transform-style: preserve-3d;
-	transition: 1s;
+	-webkit-transition: -webkit-transform 1s;
+	   -moz-transition: -moz-transform 1s;
+	     -o-transition: -o-transform 1s;
+		  	transition: 1s;
 }
 .carousel-3d .spin img {
 	position: absolute;
@@ -90,7 +103,6 @@
 .popup .next {
 	right: 20px;
 }
-
 .popup-large {
 	display: none;
 	position: absolute;
@@ -99,7 +111,10 @@
 	width: 100%;
 	background: #000000;
 	overflow: hidden;
-	transition: 1s;
+	-webkit-transition: -webkit-transform 1s;
+	   -moz-transition: -moz-transform 1s;
+	     -o-transition: -o-transform 1s;
+		  	transition: 1s;
 }
 .popup-large .img-large {
 	margin: 40px auto;
