@@ -1,9 +1,15 @@
-// $( function () {
+$( function () {
 	var imgsArr = [
-		["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg"],
-		["07.jpg", "08.jpg", "09.jpg", "10.jpg", "11.jpg", "12.jpg"],
-		["13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg"]
+			["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"],
+			["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg"],
+			["001.jpg", "002.jpg", "003.jpg", "004.jpg", "005.jpg", "006.jpg", "007.jpg"]
+		];
+	var thanksArr = [
+		{content: "感谢_DeAth_TrAp提供的图片素材", url: "http://weibo.com/u/1976341311", social: "Weibo"},
+		{},
+		{}
 	];
+
 	var gallery = {
 		num: 0, // click num
 		rotateYDeg: 0, // rotateY
@@ -13,9 +19,24 @@
 			    effect:'fadeIn' 
 			});
 		},
+		appendImgs: function () {
+			var str = ''
+			for (var i = 0, lenI = imgsArr.length; i < lenI; i++) {
+				str += '<div class="col-xs-6 col-md-4">';
+				for (var j = 0, lenJ = imgsArr[i].length; j < lenJ; j++) {
+					str += '<div class="photo" arr-index="' + i + '-' + j +'">'
+						+	   '<img class="lazy" data-original="images/small/' + imgsArr[i][j] + '" />'
+						+  '</div>';
+				}
+				str += '</div>';
+			}console.log(str)
+			$(".row").html(str);
+			
+		},
 		appendSpinImg: function (index) {
 			var arr = imgsArr[index],
-			    str = "";
+			    str = "",
+			    thankStr = "";
 
 			for (var i = 0, len = imgsArr[index].length; i < len; i++) {
 				str += '<img src="images/small/' + imgsArr[index][i] + '" />';
@@ -23,6 +44,13 @@
 
 			$(".spin").html(str);
 
+			if ("content" in thanksArr[index]) {
+				thankStr += thanksArr[index].content
+						 +      '<a class="share" href="' + thanksArr[index].url + '" target="_blank">'
+						 +		    '<i class="iconfont">&#xe603;</i>' + thanksArr[index].social
+						 +		'</a>';	 
+			}
+			$(".thank").html(thankStr);
 		},
 		spinImg: function (index) {
 			var width = $(".carousel-3d").width(), // carousel's width
@@ -81,7 +109,6 @@
 				$(".img-large img").attr("src", imgSrc.replace("small", "large"));
 				$(".popup").hide();
 				$(".popup-large").show();
-				// $(".popup-large").css("height", $(".img-large").height() + "px");
 			});
 
 			$(".popup-large").on("click", ".close", function () {
@@ -98,13 +125,12 @@
 			$(".spin").css(cssStyle);
 		},
 		init: function () {
+			gallery.appendImgs();
 			gallery.lazyImg();
 			gallery.selectAction();
 
-			// gallery.appendSpinImg(0);
-			// gallery.spinImg(0);
 		}
 	};
 
 	gallery.init();
-// });
+});

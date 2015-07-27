@@ -103,6 +103,24 @@
 .popup .next {
 	right: 20px;
 }
+.popup .thank {
+	position: absolute;
+	left: 40%;
+	bottom: 20px;
+	font-size: 16px;
+	color: #ffffff;
+}
+.popup .thank .share i {
+	margin: 0 5px 0 10px;
+	font-size: 18px;
+}
+.popup .thank a {
+	color: #3c9aec;
+}
+.popup .thank a:focus,
+.popup .thank a:hover {
+	color: #59adf7;
+}
 .popup-large {
 	display: none;
 	position: absolute;
