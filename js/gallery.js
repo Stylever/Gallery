@@ -31,7 +31,6 @@ $( function () {
 				str += '</div>';
 			}console.log(str)
 			$(".row").html(str);
-			
 		},
 		appendSpinImg: function (index) {
 			var arr = imgsArr[index],
@@ -128,7 +127,6 @@ $( function () {
 			gallery.appendImgs();
 			gallery.lazyImg();
 			gallery.selectAction();
-
 		}
 	};
 
